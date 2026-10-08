@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Читалка</title>
+<link rel="stylesheet" href="assets/reader.css">
+</head>
+<body>
+<div id="app" class="bars-on">
+
+  <section id="cover" class="view">
+    <div class="cover-inner">
+      <p class="cover-kicker">Уэнсдэй</p>
+      <h1 id="cover-title">…</h1>
+      <p id="cover-meta" class="cover-meta"></p>
+      <div class="cover-actions">
+        <button id="btn-continue" class="btn btn-primary" hidden></button>
+        <button id="btn-start" class="btn btn-primary" hidden>Начать читать</button>
+        <button id="btn-toc-cover" class="btn">Оглавление</button>
+        <button id="btn-restart" class="btn btn-quiet" hidden>С начала</button>
+      </div>
+      <p id="cover-error" class="cover-error" hidden></p>
+    </div>
+  </section>
+
+  <section id="reader" class="view" hidden>
+    <div id="stage">
+      <div id="clip"><div id="flow" class="flow" lang="ru"></div></div>
+    </div>
+    <header id="topbar">
+      <button id="btn-back" class="icon-btn" aria-label="На обложку">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="top-title" class="top-title"></div>
+      <button id="btn-toc" class="icon-btn" aria-label="Оглавление">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+      <button id="btn-settings" class="icon-btn" aria-label="Настройки"><span class="aa">Aa</span></button>
+    </header>
+    <footer id="bottombar">
+      <div id="status" class="status"></div>
+      <div class="strip"><i id="strip-fill"></i></div>
+    </footer>
+  </section>
+
+  <div id="end" class="overlay" hidden>
+    <div class="overlay-card">
+      <h2>Конец</h2>
+      <p id="end-note"></p>
+      <button id="end-restart" class="btn btn-primary">Начать заново</button>
+      <button id="end-toc" class="btn">Оглавление</button>
+      <button id="end-back" class="btn btn-quiet">Вернуться к последней странице</button>
+    </div>
+  </div>
+
+  <div id="sheet-toc" class="sheet" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-panel" role="dialog" aria-label="Оглавление">
+      <div class="sheet-head"><h2>Оглавление</h2><button class="btn btn-quiet" data-close>Закрыть</button></div>
+      <ul id="toc-list" class="toc"></ul>
+      <button id="toc-cover" class="btn btn-quiet">На обложку</button>
+    </div>
+  </div>
+
+  <div id="sheet-settings" class="sheet" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-panel" role="dialog" aria-label="Настройки">
+      <div class="sheet-head"><h2>Настройки</h2><button class="btn btn-quiet" data-close>Закрыть</button></div>
+      <div class="row"><span class="row-label">Шрифт</span>
+        <div class="stepper">
+          <button id="fs-minus" class="btn" aria-label="Меньше">A-</button>
+          <span id="fs-val" class="fs-val">19</span>
+          <button id="fs-plus" class="btn" aria-label="Больше">A+</button>
+        </div>
+      </div>
+      <div class="row"><span class="row-label">Тема</span>
+        <div class="themes">
+          <button class="btn" data-theme-set="dark">Тёмная</button>
+          <button class="btn" data-theme-set="light">Светлая</button>
+          <button class="btn" data-theme-set="sepia">Сепия</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<noscript><p style="padding:24px;font-family:sans-serif">Для чтения нужен включённый JavaScript.</p></noscript>
+<script src="assets/reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "books": [
+    {
+      "id": "shipwreck-island",
+      "title": "Народ Соли",
+      "path": "books/shipwreck-island/book.json",
+      "chapters": 7,
+      "words": 27318,
+      "complete": true,
+      "cover": null,
+      "updatedAt": "2026-10-06T20:14:48Z"
+    }
+  ]
+}
